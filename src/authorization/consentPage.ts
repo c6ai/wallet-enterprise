@@ -33,11 +33,23 @@ export async function consent(req: Request, res: Response, _next: NextFunction) 
 	const allCredentialViews = await getAllCredentialViews(req.authorizationServerState);
 
 	if (SKIP_CONSENT) {
-		return await openidForCredentialIssuingAuthorizationServerService.sendAuthorizationResponse(
-			{req, res},
-			req.authorizationServerState.id,
-			req.authorizationServerState.authorization_details
-		);
+		try {
+			return await openidForCredentialIssuingAuthorizationServerService.sendAuthorizationResponse(
+				{req, res},
+				req.authorizationServerState.id,
+				req.authorizationServerState.authorization_details
+			);
+		}
+		catch(err) {
+			console.error(err);
+			return res.render('error', {
+				code: 123,
+				msg: "Could not send authorization response",
+				lang: req.lang,
+				locale: locale[req.lang]
+			});
+		}
+
 	}
 
 	if (req.method == "POST") {
