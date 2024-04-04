@@ -84,8 +84,8 @@ selectCard.forEach(selectCard => {
 			if(layout.classList.contains('multi')) {
 				toggleInput(thisId);
 			}
-			isSelectedIcon.style.display = isSelectedIcon.style.display === 'none' ? 'inline' : 'none';
-			isNotSelectedIcon.style.display = isNotSelectedIcon.style.display === 'none' ? 'inline' : 'none';
+			isSelectedIcon.style.display = isSelectedIcon.style.display === 'none' ? 'flex' : 'none';
+			isNotSelectedIcon.style.display = isNotSelectedIcon.style.display === 'none' ? 'flex' : 'none';
 
 			checkCardSelection();
 		}

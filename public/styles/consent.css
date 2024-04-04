@@ -144,8 +144,15 @@ section.MainLayout {
 .is-selected, .is-not-selected {
 	margin-bottom: 15px;
 	margin-right: 15px;
-	font-size: 20px;
-	color: white;
+	font-size: 22px;
+	color: var(--primary-color);
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 23px;
+	height: 24px;
+	justify-content: center;
+  align-items: center;
+	display: flex;
+	border-radius: 5px;
 }
 
 .GetMultiBtn {
@@ -163,7 +170,7 @@ section.MainLayout {
 }
 
 .layout.multi .credential.selected .is-selected {
-	display: block;
+	display: flex;
 }
 
 .layout.multi .GetMultiBtn {
